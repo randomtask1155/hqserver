@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hqserver
+  name: hqserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hqserver
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hqserver
+    spec:
+      containers:
+      - image: randomtask1155/hqserver
+        name: hqserver
+        env:
+          - name: PORT
+            valueFrom:
+              secretKeyRef:
+                name: hqserverenv
+                key: PORT
+          - name: SUMP_ADDRESS
+            valueFrom:
+              secretKeyRef:
+                name: hqserverenv
+                key: SUMP_ADDRESS
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hqserver
+spec:
+  selector:
+    app: hqserver
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 8080
+  type: NodePort
+
+

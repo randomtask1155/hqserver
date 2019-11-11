@@ -1,0 +1,12 @@
+{
+	"ImportPath": "github.com/randomtask1155/hqserver",
+	"GoVersion": "go1.12",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.7.3-9-g884b5ff",
+			"Rev": "884b5ffcbd3a11b730f0b75f5c86ac408753c34d"
+		}
+	]
+}

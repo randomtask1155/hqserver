@@ -1,0 +1,13 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hqserver-ingress
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /hq
+          backend:
+            serviceName: hqserver
+            servicePort: 3001
