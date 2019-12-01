@@ -34,7 +34,7 @@ func (d *Device) AddEvent(event string) {
 		d.Info.Events = make([]string,MaxEvents)
 		d.EventTrack = 0
 	}
-	if d.EventTrack >= (MaxEvents-1) {
+	if d.EventTrack > (MaxEvents-1) { 
 		d.EventTrack = 0
 	}
 	d.Info.Events[d.EventTrack] = event

@@ -30,6 +30,11 @@ spec:
               secretKeyRef:
                 name: hqserverenv
                 key: SUMP_ADDRESS
+          - name: ROKU_PLAYERS
+            valueFrom:
+              secretKeyRef:
+                name: hqserverenv
+                key: ROKU_PLAYERS
 ---
 apiVersion: v1
 kind: Service
