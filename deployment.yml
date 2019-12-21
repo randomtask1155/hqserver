@@ -25,6 +25,11 @@ spec:
               secretKeyRef:
                 name: hqserverenv
                 key: PORT
+          - name: ACCESS_HASH
+            valueFrom:
+              secretKeyRef:
+                name: hqserverenv
+                key: ACCESS_HASH
           - name: SUMP_ADDRESS
             valueFrom:
               secretKeyRef:

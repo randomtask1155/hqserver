@@ -14,6 +14,7 @@ import (
 var (
 	logger         *log.Logger
 	devices []*device.Device
+	accessToken string
 )
 
 
@@ -27,6 +28,7 @@ func main() {
 	logger = log.New(os.Stdout, "logger: ", log.Ldate|log.Ltime|log.Lshortfile)
 	devices = append(devices, sumppump.SumpPump)
 	devices = append(devices, roku.RokuBoxes)
+	accessToken = os.Getenv("ACCESS_HASH")
 
 	r := newRouter()
 	err := http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("PORT")), r)

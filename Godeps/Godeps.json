@@ -11,6 +11,14 @@
 		{
 			"ImportPath": "github.com/randomtask1155/rokuremote",
 			"Rev": "05408c33c3e49b4ae00870a988868a540c9fdf8d"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/bcrypt",
+			"Rev": "becbf705a91575484002d598f87d74f0002801e7"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/blowfish",
+			"Rev": "becbf705a91575484002d598f87d74f0002801e7"
 		}
 	]
 }
