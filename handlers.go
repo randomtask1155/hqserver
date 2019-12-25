@@ -54,6 +54,7 @@ func statusHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	d := make([]device.DeviceStatus,len(devices))
 	for i := range devices {
 		d[i] = devices[i].Info
