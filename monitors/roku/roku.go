@@ -83,9 +83,9 @@ func(c *Controller) Monitor() {
 		for i := range c.Players{
 			err := c.Players[i].UpdateStatus()
 			if err != nil {
-				RokuBoxes.Info.Events[i] = fmt.Sprintf("%s:%s", c.Players[i].Player.NickName, err)
+				RokuBoxes.Info.Events[i] = fmt.Sprintf("%s:%s:%s", c.Players[i].Player.NickName, c.Players[i].Player.Address, err)
 			} else {
-				RokuBoxes.Info.Events[i] = fmt.Sprintf("%s:%s", c.Players[i].Player.NickName,c.Players[i].Status.Status)
+				RokuBoxes.Info.Events[i] = fmt.Sprintf("%s:%s:%s", c.Players[i].Player.NickName, c.Players[i].Player.Address, c.Players[i].Status.Status)
 			}
 		}
 		time.Sleep(60 * time.Second)
